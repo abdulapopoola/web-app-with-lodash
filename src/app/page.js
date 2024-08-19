@@ -1,4 +1,16 @@
+'use client'
+
 import Image from "next/image";
+import _ from 'lodash'; 
+
+var users = [
+  { 'user': 'barney', 'age': 36 },
+  { 'user': 'fred',   'age': 40 }
+];
+ 
+var userIndex = _.indexBy(users, 'user');
+var result = _.pluck(userIndex, 'age');
+console.log("Plucking by age", result);
 
 export default function Home() {
   return (
