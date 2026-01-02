@@ -8,8 +8,8 @@ var users = [
   { 'user': 'fred',   'age': 40 }
 ];
  
-var userIndex = _.indexBy(users, 'user');
-var result = _.pluck(userIndex, 'age');
+var userIndex = _.keyBy(users, 'user');
+var result = _.map(userIndex, 'age');
 console.log("Plucking by age", result);
 
 export default function Home() {
