@@ -1,16 +1,15 @@
 'use client'
 
 import Image from "next/image";
-import _ from 'lodash'; 
+import { processUsers } from '../utils/lodash-utils';
 
-var users = [
+const users = [
   { 'user': 'barney', 'age': 36 },
   { 'user': 'fred',   'age': 40 }
 ];
- 
-var userIndex = _.keyBy(users, 'user');
-var result = _.map(userIndex, 'age');
-console.log("Plucking by age", result);
+
+const processedResult = processUsers(users);
+console.log("Processed users", processedResult);
 
 export default function Home() {
   return (
